@@ -1,8 +1,7 @@
+
 const resultInput = document.getElementById('resultInput')
+const userInputDetect = document.getElementById('userInput').addEventListener('keyup', () => {})
 
-
-
-//Reads unit selection, runs cooresponding function
 function functionSelection(unitSelectionSet,fromSelectionSet,toSelectionSet,userInputSet){
   if(unitSelectionSet === 1){
     tempConversion(fromSelectionSet, toSelectionSet,userInputSet)
@@ -26,33 +25,36 @@ function tempConversion(fromSelectionSet, toSelectionSet, userInputVar){
   const tempFahrenheitToKelvin = Math.round(tempFahrenheitToCelsius + 273.15);
   const tempCelsiusToKelvin = Math.round(userInputVar + 273.15)
   
-  if(fromSelectionSet === 'Fahrenheit'){
-    fromFahrenheitConvert(toSelectionSet)}
-  else if (fromSelectionSet === 'Celsius'){
-    fromCelsiusConvert(toSelectionSet)}
-  else if (fromSelectionSet === 'Kelvin'){
-    fromKelvinConvert(toSelectionSet)}
+    if(fromSelectionSet === 'Fahrenheit'){
+      onkeyup = () => {fromFahrenheitConvert(toSelectionSet)}
+      }
+    else if (fromSelectionSet === 'Celsius'){
+      onkeyup = () => {fromCelsiusConvert(toSelectionSet)}}
+    else if (fromSelectionSet === 'Kelvin'){
+      onkeyup = () => {fromKelvinConvert(toSelectionSet)}}
 
 
   function fromFahrenheitConvert(toSelectionSet){
-    if (toSelectionSet === "Celsius"){
-      resultInput.value =+ tempFahrenheitToCelsius;
-    }
-    else if (toSelectionSet === "Kelvin"){
-      resultInput.value =+ tempFahrenheitToKelvin;
-    }
-  }
-  function fromCelsiusConvert(toSelectionSet){
-    if (toSelectionSet === "Fahrenheit"){
-      resultInput.value =+ tempCelsiusToFahrenheit;}
-    else if (toSelectionSet === "Kelvin"){
-      resultInput.value =+ tempCelsiusToKelvin;}
-  }
-  function fromKelvinConvert(toSelection){
-    if (toSelectionSet === "Fahrenheit"){
-      resultInput.value =+ tempFahrenheitToKelvin;}
-    else if (toSelectionSet === 'Celsius'){
-      resultInput.value =+ tempCelsiusToKelvin;}}
+    
+      if (toSelectionSet === "Celsius"){
+    
+     resultInput.value =+ tempFahrenheitToCelsius
+        }
+        else if (toSelectionSet === "Kelvin"){
+          resultInput.value =+ tempFahrenheitToKelvin;
+        }
+      }
+      function fromCelsiusConvert(toSelectionSet){
+        if (toSelectionSet === "Fahrenheit"){
+          resultInput.value =+ tempCelsiusToFahrenheit;}
+        else if (toSelectionSet === "Kelvin"){
+          resultInput.value =+ tempCelsiusToKelvin;}
+      }
+      function fromKelvinConvert(toSelection){
+        if (toSelectionSet === "Fahrenheit"){
+          resultInput.value =+ tempFahrenheitToKelvin;}
+        else if (toSelectionSet === 'Celsius'){
+          resultInput.value =+ tempCelsiusToKelvin;}}
   }
   
   

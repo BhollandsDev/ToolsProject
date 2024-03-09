@@ -1,6 +1,4 @@
-   
-    
-    
+
     let userInput ;
     let result; 
     let unitSelection ;
@@ -172,7 +170,7 @@
 
 
 
-        if(unitSelection === "Tempurature"){
+       /*  if(unitSelection === "Tempurature"){
             if(fromSelection === "Fahrenheit" && toSelection === "Celsius"){
                 document.querySelector('.result').innerHTML = tempFahrenheitToCelsius
                 return tempFahrenheitToCelsius;}
@@ -229,7 +227,7 @@
             else if(fromSelection === "Liters"){
                     document.querySelector('.result').innerHTML = volLiterstoGallons;
                     return volLiterstoGallons;} 
-        }    
+        } */   
     
     }
 
