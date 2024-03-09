@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="view-transition" content="same-origin"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+		<link rel="stylesheet" href="../StyleSheet/style.css">
+</head>
+<body id="main-body-id" onkeydown="enterKeyFunction()">
+	<nav>
+		<ul class = "nav-list">
+				<li>
+						<a href="../index.html"><span>Home</span></a>
+				</li>
+				<li class="active">
+						<a href="Percentage-Calc/Percentage-Calc.html" aria-current="page"><span>Percentage Calculator</span></a>
+				</li>
+				<li>
+						<a href="../UnitConverter/Unit-Converter.html"><span>Unit Converter</span></a>
+				</li>
+				<li>
+						<a href="../Calculator/Calculator.html"><span>Calculator</span></a>
+				</li>
+				<li>
+						<a href="../testfolder/test4.html"><span>test4</span></a>
+				</li>
+				<li>
+						<a href="../testfolder/test5.html"><span>test5</span></a>
+				</li>
+		</ul>
+	</nav>
+	<main>
+		<div>Percentage off
+        <input id="inp-percent-id" class="inp-percent-class" placeholder="Enter a percentage"  inputmode="numeric">
+    </div><br>
+    <div>Price of item
+        <input id="inp-price-id" class="inp-cost-class" placeholder="Enter the original price" inputmode="numeric">
+    </div>
+    <div><br>
+        <button id="btn-calculate-id" class="btn-calculate-class" onclick="calculate()" onkeydown="enterKeyFunction()"
+				>Calculate</button><br><br>
+				<button id="btn-reset-id" class="btn-reset=class" onclick="formReset()">Reset</button>
+    </div><br>
+    <div id="div-result-id" class="div-result-class">Price with discount $  
+    </div>
+	</main>
+</body>
+<script>
+    const costPriceInput = document.getElementById('inp-price-id');
+		const percentOffInput = document.getElementById('inp-percent-id');
+		const resultOutput = document.getElementById('div-result-id');
+		const mainBodyActions = document.getElementById('main-body-id')
+		console.log(costPriceInput.value,percentOffInput.value)
+		
+		function enterKeyFunction(){
+			if(event.key === "Enter"){
+				document.getElementById('btn-calculate-id').click()
+			}
+		}
+		
+		
+
+		function calculate (){
+			const percentageConversion = (Number(percentOffInput.value) / 100);
+			const result = (Number(costPriceInput.value) - ((Number(costPriceInput.value) * percentageConversion)));
+			resultOutput.innerHTML = `Price with discount $ ${(Math.round(result * 100)) / 100}`
+			console.log(result)
+		}
+		function formReset(){
+			costPriceInput.value = ''
+			percentOffInput.value = ''
+			resultOutput.innerHTML = 'Price with discount $'
+		}
+</script>
+</html>
