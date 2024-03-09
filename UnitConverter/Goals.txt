@@ -1,0 +1,7 @@
+make both inputs accept and process results
+-add optgroup to all drop down options
+create sidebar navigations for Units of Measurments
+style page
+create clear history button and functions
+finish history list to hold no more than past ten results
+add more convertions operations

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="view-transition" content="same-origin"/>
+    <link rel="stylesheet" href="../StyleSheet/style.css">
+    <link rel="stylesheet" type="text/css" href="./StyleSheetUnitConverter/Unit-converter-style.css">
+    <title>Unit ConverterV5</title>
+   
+
+</head>
+<body>
+    <nav>
+        <ul class = "nav-list">
+            <li>
+                <a href="../index.html"><span>Home</span></a>
+            </li>
+            <li>
+                <a href="../Percentage Calc/Percentage-Calc.html"><span>Percentage Calculator</span></a>
+            </li>
+            <li class="active">
+                <a href="Unit-Converter.html"  aria-current="page"><span>Unit Converter</span></a>
+            </li>
+            <li>
+                <a href="../Calculator/Calculator.html"><span>Calculator</span></a>
+            </li>
+            <li>
+                <a href="test4.html"><span>test4</span></a>
+            </li>
+            <li>
+                <a href="test5.html"><span>test5</span></a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <h1>
+            What would you like to convert V5?
+        </h1>
+            <div class = "div-UnitsCl">Units of measurments
+                <select id = "unitGroups" onchange =" resetForm(), unitSelection = this.selectedIndex, unitSelectionVisibility()">
+                    <option>---Select one---</option>
+                    <option>Tempurature</option>
+                    <option>Distance</option>
+                    <option>Volume</option>
+                </select>
+        
+            </div>
+        
+            
+        
+            <p id ="optionListID" class = "optionListCl">
+                <div class = div-ConvertOptionsCl>Convert from
+                    <select id ="fromPlaceHolder">
+                        <option>--Select from above--</option>
+                    </select>
+                    
+        
+                    <select id = "fromListTemp" class = "d-none" onchange="fromSelection = this.value, toSelectionVisibility(),functionSelection(unitSelection,fromSelection,toSelection,userInput)">
+                        <option >---From---</option>
+                        <optgroup label="Imperial">
+                            <option>Fahrenheit</option>
+                        </optgroup>
+                        <optgroup label="Metric">
+                            <option>Celsius</option>
+                            <option>Kelvin</option>
+                        </optgroup>
+                    </select>
+        
+                    <select id = "fromListDistance" class = "d-none" onchange="fromSelection = this.value, toSelectionVisibility(),functionSelection(unitSelection,fromSelection,toSelection,userInput)">
+                        <option>---From---</option>
+                        <optgroup label="Imperial">
+                            <option>Feet</option>
+                            <option>Inch</option>
+                        </optgroup>
+                        <optgroup label="Metric">
+                            <option>Meters</option>
+                            <option>Centimeters</option>
+                        </optgroup>
+                    </select>
+        
+                    <select id = "fromListVolume" class = "d-none" onchange="fromSelection = this.value, toSelectionVisibility(),functionSelection(unitSelection,fromSelection,toSelection,userInput)">
+                        <option>---From---</option>
+                        <optgroup label="Imperial">
+                            <option>Gallons</option>
+                        </optgroup>
+                        <optgroup label="Metric">
+                            <option>Liters</option>
+                        </optgroup>    
+                    </select>to
+
+                    <select id = "toPlaceHolder">
+                        <option>--Select from above--</option>
+                    </select>
+        
+                    <select id = "toListTemp" class = "d-none" onchange = "toSelection = this.value,functionSelection(unitSelection,fromSelection,toSelection,userInput)" >
+                        <option>---To---</option>
+                        <optgroup label="Imperial">
+                            <option id="tofahrenheit">Fahrenheit</option>
+                        </optgroup>
+                        <optgroup label="Metric">
+                            <option id="tocelsius">Celsius</option>
+                            <option id="tokelvin">Kelvin</option>
+                        </optgroup>
+                    </select>
+                    
+                    <select id = "toListDistance" class = "d-none" onchange = "toSelection = this.value,functionSelection(unitSelection,fromSelection,toSelection,userInput)">
+                        <option>---To---</option>
+                        <optgroup label="Imperial" id="optGroupImperial">
+                            <option id="tofeet">Feet</option>
+                            <option id="toinch">Inch</option>
+                        </optgroup>
+                        <optgroup label="Metric" id="optGroupMetic" >
+                            <option id="tometers">Meters</option>
+                            <option id="tocentimeters">Centimeters</option>
+                        </optgroup> 
+                    </select>
+        
+                    <select id = "toListVolume" class = "d-none" onchange = "toSelection = this.value,functionSelection(unitSelection,fromSelection,toSelection,userInput)">
+                        <option>---To---</option>
+                        <optgroup label="Imperial">
+                            <option id ="togallons">Gallons</option>
+                        </optgroup>
+                        <optgroup label="Metric">
+                            <option id ="toliters">Liters</option>  
+                        </optgroup>  
+                    </select>
+                </div>
+            </p>
+            
+            <p class = "p-userInputCl">
+                <input class = "userInput" id = "userInput" placeholder="Enter a number" oninput="userInput = Number(this.value), functionSelection(unitSelection,fromSelection,toSelection,userInput) ">
+                
+                <input class ="resultInput" id ="resultInput" placeholder="Results" >
+            </p>
+            <p id ="convertButtonID" class = "convertButtonCl">
+                <button class = "convert" onclick="historytable()">Save</button>
+                </p>
+            <p class ="result">Result</p>
+            <div class = "div-HistoryCl">
+                <p>
+                    History WIP
+                </p>
+                <ul class = "ul-HistoryCl">
+                    
+                </ul>
+                <p id="p-HistoryTable"></p>
+            </div>
+        
+        
+        
+    </main>
+    <script src="./JS Unit Converter/Option-Visibility.js"></script>
+    <script src="./JS Unit Converter/index.js" ></script>
+    <script  src="./JS Unit Converter/Conversion-Functions.js"></script>
+</body>
+</html>
