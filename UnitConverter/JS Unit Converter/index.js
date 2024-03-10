@@ -1,5 +1,5 @@
 
-    let userInput ;
+   /* let userInput ;
     let result; 
     let unitSelection ;
     let fromSelection ;
@@ -40,7 +40,7 @@
     //function inputResultReset(){    
     //}
 
-    function resetForm(){
+    /*function resetForm(){
         //reset variables
         fromSelection = undefined
         toSelection = undefined
@@ -66,11 +66,11 @@
         document.getElementById("toListTemp").classList.add("d-none")
         document.getElementById("fromListVolume").classList.add("d-none")
         document.getElementById("toListVolume").classList.add("d-none")
-    }
+    }*/
 
        
 
-    function unitGroups(){
+    /*function unitGroups(){
       if (unitSelection === "Tempurature"){
         document.getElementById("fromListTemp").classList.remove("d-none")
         document.getElementById("toListTemp").classList.remove("d-none")
@@ -138,7 +138,7 @@
         resultInput.value = convertUserInput(userInput)
 
 
-    }
+    }*/
 
     
     function convertUserInput(userInputVar){

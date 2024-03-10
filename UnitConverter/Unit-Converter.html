@@ -6,7 +6,7 @@
     <meta name="view-transition" content="same-origin"/>
     <link rel="stylesheet" href="../StyleSheet/style.css">
     <link rel="stylesheet" type="text/css" href="./StyleSheetUnitConverter/Unit-converter-style.css">
-    <title>Unit ConverterV5</title>
+    <title>Unit Converter</title>
    
 
 </head>
@@ -35,8 +35,9 @@
     </nav>
     <main>
         <h1>
-            What would you like to convert V5?
+            What would you like to convert?
         </h1>
+        <h4>Right now only tempurature works semi properly</h4>
             <div class = "div-UnitsCl">Units of measurments
                 <select id = "unitGroups" onchange =" resetForm(), unitSelection = this.selectedIndex, unitSelectionVisibility()">
                     <option>---Select one---</option>
@@ -59,33 +60,33 @@
                     <select id = "fromListTemp" class = "d-none" onchange="fromSelection = this.value, toSelectionVisibility(),functionSelection(unitSelection,fromSelection,toSelection,userInput)">
                         <option >---From---</option>
                         <optgroup label="Imperial">
-                            <option>Fahrenheit</option>
+                            <option id="fromfahrenheit">Fahrenheit</option>
                         </optgroup>
                         <optgroup label="Metric">
-                            <option>Celsius</option>
-                            <option>Kelvin</option>
+                            <option id="fromcelsius">Celsius</option>
+                            <option id="fromkelvin">Kelvin</option>
                         </optgroup>
                     </select>
         
                     <select id = "fromListDistance" class = "d-none" onchange="fromSelection = this.value, toSelectionVisibility(),functionSelection(unitSelection,fromSelection,toSelection,userInput)">
                         <option>---From---</option>
                         <optgroup label="Imperial">
-                            <option>Feet</option>
-                            <option>Inch</option>
+                            <option id="fromfeet">Feet</option>
+                            <option id="frominch">Inch</option>
                         </optgroup>
                         <optgroup label="Metric">
-                            <option>Meters</option>
-                            <option>Centimeters</option>
+                            <option id="frommeters">Meters</option>
+                            <option id="fromcentimeters">Centimeters</option>
                         </optgroup>
                     </select>
         
                     <select id = "fromListVolume" class = "d-none" onchange="fromSelection = this.value, toSelectionVisibility(),functionSelection(unitSelection,fromSelection,toSelection,userInput)">
                         <option>---From---</option>
                         <optgroup label="Imperial">
-                            <option>Gallons</option>
+                            <option id="fromgallons">Gallons</option>
                         </optgroup>
                         <optgroup label="Metric">
-                            <option>Liters</option>
+                            <option id="fromliters">Liters</option>
                         </optgroup>    
                     </select>to
 
@@ -93,7 +94,7 @@
                         <option>--Select from above--</option>
                     </select>
         
-                    <select id = "toListTemp" class = "d-none" onchange = "toSelection = this.value,functionSelection(unitSelection,fromSelection,toSelection,userInput)" >
+                    <select id = "toListTemp" class = "d-none" onchange = "toSelection = this.value,fromSelectionVisibility(),functionSelection(unitSelection,fromSelection,toSelection,userInput)" >
                         <option>---To---</option>
                         <optgroup label="Imperial">
                             <option id="tofahrenheit">Fahrenheit</option>
@@ -104,7 +105,7 @@
                         </optgroup>
                     </select>
                     
-                    <select id = "toListDistance" class = "d-none" onchange = "toSelection = this.value,functionSelection(unitSelection,fromSelection,toSelection,userInput)">
+                    <select id = "toListDistance" class = "d-none" onchange = "toSelection = this.value,fromSelectionVisibility(), functionSelection(unitSelection,fromSelection,toSelection,userInput)">
                         <option>---To---</option>
                         <optgroup label="Imperial" id="optGroupImperial">
                             <option id="tofeet">Feet</option>
@@ -116,7 +117,7 @@
                         </optgroup> 
                     </select>
         
-                    <select id = "toListVolume" class = "d-none" onchange = "toSelection = this.value,functionSelection(unitSelection,fromSelection,toSelection,userInput)">
+                    <select id = "toListVolume" class = "d-none" onchange = "toSelection = this.value,fromSelectionVisibility(), functionSelection(unitSelection,fromSelection,toSelection,userInput)">
                         <option>---To---</option>
                         <optgroup label="Imperial">
                             <option id ="togallons">Gallons</option>
@@ -125,6 +126,7 @@
                             <option id ="toliters">Liters</option>  
                         </optgroup>  
                     </select>
+                    <button id="reset-btn-id" onclick="resetSelectionVisibility()">Reset</button>
                 </div>
             </p>
             
@@ -151,7 +153,6 @@
         
     </main>
     <script src="./JS Unit Converter/Option-Visibility.js"></script>
-    <script src="./JS Unit Converter/index.js" ></script>
     <script  src="./JS Unit Converter/Conversion-Functions.js"></script>
 </body>
 </html>

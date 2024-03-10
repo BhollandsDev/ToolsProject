@@ -10,7 +10,7 @@ function functionSelection(unitSelectionSet,fromSelectionSet,toSelectionSet,user
     distConversion(fromSelectionSet, toSelectionSet, userInputSet)
   }
   else if (unitSelectionSet === 3){
-    console.log("test3",userInput)
+    volConversion(fromSelectionSet, toSelectionSet, userInputSet)
   }
 }
 
@@ -50,7 +50,7 @@ function tempConversion(fromSelectionSet, toSelectionSet, userInputVar){
         else if (toSelectionSet === "Kelvin"){
           resultInput.value =+ tempCelsiusToKelvin;}
       }
-      function fromKelvinConvert(toSelection){
+      function fromKelvinConvert(toSelectionSet){
         if (toSelectionSet === "Fahrenheit"){
           resultInput.value =+ tempFahrenheitToKelvin;}
         else if (toSelectionSet === 'Celsius'){
@@ -120,8 +120,26 @@ function distConversion(fromSelectionSet, toSelectionSet, userInputVar){
   }
 }
 
-function volConversion(){
+function volConversion(fromSelectionSet, toSelectionSet, userInputVar){
+  const volGallonsToLiters = Math.round(((userInputVar * 3.785) + Number.EPSILON)*100)/100;
+  const volLiterstoGallons = Math.round(((userInputVar / 3.785)+ Number.EPSILON)*100)/100;
 
+  if(fromSelectionSet === 'Gallons'){
+    onkeyup = () => {fromGallonsConvert(toSelectionSet)}
+    }
+  else if (fromSelectionSet === 'Liters'){
+    onkeyup = () => {fromLitersConvert(toSelectionSet)}}
+  
+function fromGallonsConvert(toSelectionSet){
+  if(toSelectionSet === "Liters"){
+    resultInput.value =+ volGallonsToLiters;
+  }}
+function fromLitersConvert(toSelectionSet){
+  if (toSelectionSet === "Gallons")
+    resultInput.value =+ volLiterstoGallons;
+  }
 }
+
+
 
 
