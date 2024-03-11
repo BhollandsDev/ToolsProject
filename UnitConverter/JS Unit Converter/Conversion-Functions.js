@@ -1,6 +1,12 @@
 
 const resultInput = document.getElementById('resultInput')
 const userInputDetect = document.getElementById('userInput').addEventListener('keyup', () => {})
+let userInput ;
+let result; 
+let unitSelection ;
+let fromSelection ;
+let toSelection ;
+
 
 function functionSelection(unitSelectionSet,fromSelectionSet,toSelectionSet,userInputSet){
   if(unitSelectionSet === 1){
@@ -13,7 +19,6 @@ function functionSelection(unitSelectionSet,fromSelectionSet,toSelectionSet,user
     volConversion(fromSelectionSet, toSelectionSet, userInputSet)
   }
 }
-
 
 
 
@@ -76,13 +81,13 @@ function distConversion(fromSelectionSet, toSelectionSet, userInputVar){
   const distInchToCentimeter = userInputVar * 2.54;
 
   if(fromSelectionSet === 'Inch'){
-    fromInchConvert(toSelectionSet)}
+    onkeyup = () => {fromInchConvert(toSelectionSet)}}
   else if (fromSelectionSet === 'Feet'){
-    fromFeetConvert(toSelectionSet)}
+    onkeyup = () => {fromFeetConvert(toSelectionSet)}}
   else if (fromSelectionSet === 'Meters'){
-    fromMetersConvert(toSelectionSet)}
+    onkeyup = () => {fromMetersConvert(toSelectionSet)}}
   else if (fromSelectionSet === 'Centimeters'){
-      fromCentimetersConvert(toSelectionSet)}
+    onkeyup = () => {fromCentimetersConvert(toSelectionSet)}}
 
 
   function fromInchConvert(toSelectionSet){
