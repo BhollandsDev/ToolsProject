@@ -58,14 +58,52 @@
     <main>
         <h1>Test44</h1>
         <div class="div-input">
-             <label>Input1</label><input class="input1"><button>Button1</button><br>
-             <label>Input2</label><input class="input2"><button>Button2</button><br>
-             <label>Input3</label><input class="input3"><button>Button3</button>
-        
+             <label>Input1</label><input class="input1" id="input1-id"><button onclick="credits()">Play Game</button><br>
+             <label>Input2</label><input class="input2" id="input2-id"><button id="btn2-id">+ 5 Credits</button><br>
+             <label>Input3</label><input class="input3" id="input3-id"><button>Button3</button>
+        </div>
+        <div class="div-output">
+            <label>Credits</label>
+            <p id="credits-id">Credits available</p>
+            
         </div>
     </main>
 </body>
 <script>
+        
+    /*     const input1 = document.getElementById("input1-id");
+        const input2 = document.getElementById("input2-id");
+        //console.log(input1)
+        document.getElementById("input1-id").oninput = function(){inputChange(), console.log(input2.value)}
 
+    function inputChange (){
+        if(input1.value === ""){input2.value == ""}
+        input2.value =+ input1.value
+        
+    } */
+    const credits = ((num) => {
+        let credits = num;
+        const addCredits = document.getElementById("btn2-id");
+        const creditDisplay = document.getElementById("credits-id");
+        alert(`You get ${credits} free credits, enjoy!`);
+        creditDisplay.innerHTML = credits
+        return () => {
+            addCredits.onclick = function() {
+                if (credits < 0){credits = 0}
+                credits += 5;
+                creditDisplay.innerHTML = credits
+                alert(`5 credits added, ${credits} available`);
+            };
+            credits -= 1;
+            creditDisplay.innerHTML = credits
+            if (credits >= 0) alert("Game Played");
+            if(credits <= -1) alert('not enough credits'), creditDisplay.innerHTML = "0";
+            
+
+        }
+    })(3);
+
+        
+    
 </script>
 </html>
